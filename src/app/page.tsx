@@ -196,10 +196,10 @@ export default function BinaryInsertionSortStudio() {
       <header className="border-b border-slate-200 bg-white/50 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-600/20">
+            <div className="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center shadow-lg shadow-teal-500/20">
               <Search className="text-white w-5 h-5" />
             </div>
-            <h1 className="font-black italic tracking-tighter text-xl uppercase tracking-widest text-indigo-600">Binary_Insertion_Studio</h1>
+            <h1 className="font-black italic tracking-tighter text-xl uppercase tracking-widest text-teal-600">二分挿入ソート (Binary Insertion Sort)</h1>
           </div>
           <div className="flex items-center gap-6">
             <div className="hidden md:flex items-center gap-4 text-[10px] mono uppercase text-slate-400 font-black tracking-widest">
@@ -223,7 +223,7 @@ export default function BinaryInsertionSortStudio() {
 
           <div className="relative aspect-video lg:aspect-square max-h-[500px] bg-white rounded-[3rem] border border-slate-200 p-16 flex items-end justify-center gap-3 overflow-hidden shadow-xl">
             <div className="absolute top-8 left-12 flex items-center gap-3 mono text-[9px] text-slate-400 uppercase font-black tracking-[0.2em] z-10">
-              <Search size={14} className="text-indigo-600" />
+              <Search size={14} className="text-teal-600" />
               二分挿入ソート・シミュレーター
             </div>
 
@@ -239,25 +239,25 @@ export default function BinaryInsertionSortStudio() {
 
                 if (inRange) {
                   colorClass = "bg-slate-200";
-                  if (isSearching) colorClass = "bg-indigo-100 border border-indigo-200";
+                  if (isSearching) colorClass = "bg-teal-100 border border-teal-200";
                   if (isMid) colorClass = "bg-rose-400 shadow-[0_0_20px_rgba(244,63,94,0.4)]";
                 }
 
                 if (isTarget) {
-                  colorClass = "bg-indigo-600 shadow-[0_0_25px_rgba(79,70,229,0.5)]";
+                  colorClass = "bg-teal-600 shadow-[0_0_25px_rgba(20,184,166,0.5)]";
                   yOffset = -80; // Lift the target element
                 }
 
                 if (step.type === 'shift' && step.indices.includes(idx)) {
-                  colorClass = "bg-indigo-300 shadow-[0_0_15px_rgba(129,140,248,0.2)]";
+                  colorClass = "bg-teal-300 shadow-[0_0_15px_rgba(94,234,212,0.2)]";
                 }
 
                 if (step.type === 'insert' && step.indices[0] === idx) {
-                  colorClass = "bg-indigo-600 shadow-[0_0_25px_rgba(79,70,229,0.6)]";
+                  colorClass = "bg-teal-600 shadow-[0_0_25px_rgba(20,184,166,0.6)]";
                 }
 
                 if (step.type === 'complete') {
-                  colorClass = "bg-indigo-600 shadow-[0_0_20px_rgba(79,70,229,0.3)]";
+                  colorClass = "bg-teal-600 shadow-[0_0_20px_rgba(20,184,166,0.3)]";
                 }
 
                 return (
@@ -268,7 +268,7 @@ export default function BinaryInsertionSortStudio() {
                     style={{ height: `${val}%`, y: yOffset }}
                     className={`flex-1 min-w-[20px] rounded-t-xl relative ${colorClass} transition-all duration-300`}
                   >
-                    <div className={`absolute -top-8 left-1/2 -translate-x-1/2 text-[10px] font-black ${isSearching || isTarget ? 'text-indigo-600' : 'text-slate-300'}`}>
+                    <div className={`absolute -top-8 left-1/2 -translate-x-1/2 text-[10px] font-black ${isSearching || isTarget ? 'text-teal-600' : 'text-slate-300'}`}>
                       {val}
                     </div>
                   </motion.div>
@@ -293,13 +293,13 @@ export default function BinaryInsertionSortStudio() {
             )}
           </div>
 
-          <div className="px-10 py-8 bg-white rounded-[2.5rem] border border-slate-200 flex flex-col gap-8 shadow-lg">
+          <div className="px-10 py-8 bg-white rounded-[3rem] border border-slate-200 flex flex-col gap-8 shadow-lg">
             <div className="flex flex-col md:flex-row items-center gap-10">
               <div className="flex items-center gap-2">
                 <button onClick={stepBackward} className="p-4 bg-slate-100 text-slate-400 rounded-2xl hover:bg-slate-200 transition-colors"><StepBack size={20} /></button>
                 <button
                   onClick={() => setIsPlaying(!isPlaying)}
-                  className="w-20 h-20 bg-indigo-600 text-white rounded-[2rem] flex items-center justify-center hover:bg-indigo-500 transition-all active:scale-95 shadow-xl shadow-indigo-600/20"
+                  className="w-20 h-20 bg-teal-600 text-white rounded-[2.5rem] flex items-center justify-center hover:bg-teal-500 transition-all active:scale-95 shadow-xl shadow-teal-600/20"
                 >
                   {isPlaying ? <Pause fill="currentColor" size={24} /> : <Play fill="currentColor" size={24} className="ml-1" />}
                 </button>
